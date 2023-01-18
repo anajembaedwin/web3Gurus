@@ -60,7 +60,7 @@ export default function Upload() {
       // Uploading the thumbnail to IPFS
       const added = await client.add(thumbnail)
       // Getting the hash of the uploaded thumbnail and passing it to the uploadVideo function
-      uploadVideo(added.path)
+      uploadVideo(added.path) 
     } catch (error) {
       console.log('Error uploading file: ', error)
     }
@@ -96,9 +96,9 @@ export default function Upload() {
   }
 
   return (
-    <div className='w-full h-screen bg-[#1a1c1f] flex flex-row'>
+    <div className='w-full h-full min-h-screen bg-[#1a1c1f] flex flex-row'>
       <div className='flex-1 flex flex-col '>
-        <div className='mt-5 mr-10 flex  justify-end'>
+        <div className='mt-5 mr-10 flex justify-end'>
           <div className='flex items-center'>
             <button className='bg-transparent  text-pink-500 py-2 px-6 border rounded-lg  border-gray-600  mr-6 shadow-lg shadow-purple-500/50'>
               Discard
@@ -114,7 +114,7 @@ export default function Upload() {
             </button>
           </div>
         </div>
-        <div className='flex flex-col m-10     mt-5  lg:flex-row'>
+        <div className='flex flex-col m-10     mt-1  lg:flex-row'>
           <div className='flex lg:w-3/4 flex-col '>
             <label className='text-[#F7F7F7]  text-sm'>Title</label>
             <input
@@ -123,7 +123,7 @@ export default function Upload() {
               placeholder='Whats the Title of the video?'
               className='w-[90%] text-white placeholder:text-gray-600  rounded-md mt-2 h-12 p-2 border  bg-[#1a1c1f] border-purple-500 focus:outline-none'
             />
-            <label className='text-[#F7F7F7] mt-10'>Description</label>
+            <label className='text-[#F7F7F7] mt-5'>Description</label>
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -131,7 +131,7 @@ export default function Upload() {
               className='w-[90%] text-white h-32 placeholder:text-gray-600  rounded-md mt-2 p-2 border  bg-[#1a1c1f] border-purple-500 focus:outline-none'
             />
 
-            <div className='flex flex-row mt-10 w-[90%]  justify-between'>
+            <div className='flex flex-row mt-3 w-[90%]  justify-between'>
               <div className='flex flex-col w-2/5    '>
                 <label className='text-[#F7F7F7]  text-sm'>Location</label>
                 <input
@@ -139,7 +139,7 @@ export default function Upload() {
                   onChange={(e) => setLocation(e.target.value)}
                   type='text'
                   placeholder='Your City - Your Country'
-                  className='w-[90%] text-white placeholder:text-gray-600  rounded-md mt-2 h-12 p-2 border  bg-[#1a1c1f] border-purple-500 focus:outline-none'
+                  className='w-[90%] text-white placeholder:text-gray-600  rounded-md mt-2 h-10 p-2 border  bg-[#1a1c1f] border-purple-500 focus:outline-none'
                 />
               </div>
               <div className='flex flex-col w-2/5    '>
@@ -147,7 +147,7 @@ export default function Upload() {
                 <select
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
-                  className='w-[90%] text-white placeholder:text-gray-600  rounded-md mt-2 h-12 p-2 border  bg-[#1a1c1f] border-purple-500 focus:outline-none'
+                  className='w-[90%] text-white placeholder:text-gray-600  rounded-md mt-2 h-10 p-2 border  bg-[#1a1c1f] border-purple-500 focus:outline-none'
                 >
                   <option>Web Development</option>
                   <option>Social Media Marketing/Management</option>
@@ -161,13 +161,13 @@ export default function Upload() {
                 </select>
               </div>
             </div>
-            <label className='text-[#F7F7F7]  mt-10 text-sm'>Thumbnail</label>
+            <label className='text-[#F7F7F7]  mt-3 text-sm'>Thumbnail</label>
 
             <div
               onClick={() => {
                 thumbnailRef.current.click()
               }}
-              className='border-2 w-64 border-purple-500 border-dashed rounded-md mt-2 p-2  h-36 items-center justify-center flex'
+              className='border-2 w-64 border-purple-500 border-dashed rounded-md mt-2 p-2  h-20 items-center justify-center flex'
             >
               {thumbnail ? (
                 <img
@@ -200,7 +200,7 @@ export default function Upload() {
             className={
               video
                 ? ' w-96   rounded-md  h-64 items-center justify-center flex'
-                : 'border-2 border-purple-500  w-96 border-dashed rounded-md mt-8   h-64 items-center justify-center flex'
+                : 'border-2 border-purple-500  w-96 border-dashed rounded-md mt-8 h-60 items-center justify-center flex'
             }
           >
             {video ? (

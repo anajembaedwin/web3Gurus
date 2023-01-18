@@ -39,7 +39,7 @@ function Landing() {
       <section className='flex justify-start items-center flex-col h-screen'>
         <div className='relative w-full h-full '>
           <img
-            className='w-full h-full object-cover brightness-50'
+            className='w-full h-full object-cover brightness-100'
             src='https://source.unsplash.com/1600x900/?office-meetings'
             alt=''
           />
@@ -52,7 +52,6 @@ function Landing() {
                 <span className='bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
                   Molo{' '}
                 </span>
-                Dapp
               </h1>
               <div className='max-w-3xl mx-auto px-20'>
                 <p
@@ -60,7 +59,7 @@ function Landing() {
                   data-aos='zoom-y-out'
                   data-aos-delay='150'
                 >
-                  Built with Networks, for Networks.
+                  A decentralized Video sharing dApp.
                 </p>
                 <button
                   className='items-center text-[#F7F7F7] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg  font-medium  p-4 mt-8 shadow-lg shadow-purple-500/50'
